@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const fetchProvincias = async ()=>{
       try {
-        const respuesta = await axios.get (`http://localhost:3030/provincias/`)
+        const respuesta = await axios.get (`http://g14music.alwaysdata.net/provincias/`)
         const provincias = respuesta.data
        
         /*iterar sobre los datos y agregar los nuevos */
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const fetchContacto = async (id) =>{
         try {
-            const respuesta = await axios.get (`http://localhost:3030/contactos/${id}`)
+            const respuesta = await axios.get (`http://g14music.alwaysdata.net/contactos/${id}`)
             /*     console.log(respuesta); */
             const contacto = respuesta.data
             // asignar los valores obtenidos a los campos del formulario
@@ -61,7 +61,7 @@ formEditarContactos.addEventListener("submit",async function (event){
       provincia:document.querySelector("#nuevo-provincia").value
     };
     try {
-      await axios.put(`http://localhost:3030/contactos/${IdContacto}`,nuevoContacto)
+      await axios.put(`http://g14music.alwaysdata.net/contactos/${IdContacto}`,nuevoContacto)
       //limpiar el formulario
       window.location = "./index.html"
       formEditarContactos.reset()
